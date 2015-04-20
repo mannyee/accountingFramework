@@ -7,6 +7,7 @@ package org.mum.asd.framework.main;
 
 import org.mum.asd.client.view.BankSystemDashboard;
 import org.mum.asd.client.view.CreditCardDashboard;
+import org.mum.asd.framework.AccountManager.AccountManager;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
 
 /**
@@ -15,7 +16,8 @@ import org.mum.asd.framework.gui.CommonForm.AccountFrm;
  */
 public class Main {
     public static void main(String[] args) {
-        AccountFrm form = new CreditCardDashboard();
+        AccountManager am = new AccountManager();
+        AccountFrm form = new BankSystemDashboard();
         form.setVisible(true);
         
     }

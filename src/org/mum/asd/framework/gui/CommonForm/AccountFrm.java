@@ -1,15 +1,14 @@
 package org.mum.asd.framework.gui.CommonForm;
 
-
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import org.mum.asd.framework.AccountManager.AAccount;
+import org.mum.asd.framework.AccountManager.AccountManager;
 import org.mum.asd.framework.gui.components.ext.AccountEntryDataModel;
 import org.mum.asd.framework.gui.components.ext.AccountListTable;
 import org.mum.asd.framework.gui.components.ext.AddInterestButton;
@@ -21,6 +20,7 @@ import org.mum.asd.framework.gui.components.ext.WithdrawButton;
 import org.mum.asd.framework.common.gui.components.asd.ASDPanel;
 import org.mum.asd.framework.common.gui.components.asd.ASDScrollPane;
 import org.mum.asd.framework.mediator.Mediator;
+import org.mum.asd.framework.partyPattern.AParty;
 
 /**
  * A basic JFC based application.
@@ -110,14 +110,12 @@ public class AccountFrm extends JFrame {
 //        mediator.addColleague(JButton_Withdraw);
 //        mediator.addColleague(JButton_Addinterest);
 //        mediator.addColleague(table1);
-
 //        JButton_Exit.addActionListener(new ExitController());
 //        JButton_PerAC.addActionListener(new AccountController());
 //        JButton_CompAC.addActionListener(new AccountController());
 //        JButton_Deposit.addActionListener(new DepositController());
 //        JButton_Withdraw.addActionListener(new WithdrawController());
 //        JButton_Addinterest.addActionListener(new InterestController());
-
         table1.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
 
             @Override
@@ -146,11 +144,11 @@ public class AccountFrm extends JFrame {
                 int col = table1.columnAtPoint(me.getPoint());
                 if (col == 0) {
                     selectedColumn = "acctNumber";
-                }else if (col == 1) {
+                } else if (col == 1) {
                     selectedColumn = "name";
-                }else if (col == 2) {
+                } else if (col == 2) {
                     selectedColumn = "city";
-                }else if (col == 3) {
+                } else if (col == 3) {
                     selectedColumn = "partyType";
                 } else if (col == 4) {
                     selectedColumn = "type";
@@ -184,8 +182,21 @@ public class AccountFrm extends JFrame {
     }
 
     public void loadTableWithData() {
-        try {
-            model.setRowCount(0);
+
+        AccountManager ac = new AccountManager();
+        for (AAccount acc : ac.getAccountList()) {
+            rowdata = new Object[8];
+            rowdata[0] = acc.getAcctNumber();
+            AParty aParty = (AParty) acc.getParty();
+            rowdata[1] = aParty.getName();
+            rowdata[2] = "";
+            rowdata[3] = aParty.getType();
+            rowdata[4] = acc.getType();
+            rowdata[5] = acc.getCurrentBalance();
+            model.addRow(rowdata);
+        }
+//        try {
+//            model.setRowCount(0);
 //            AccountManager accountManager = ClassicSingleton.getInstanceAccountManager();
 //            for (Iterator<AAccount> it = accountManager.getAccountList().getSortedIterator(new AccountComparator(selectedColumn)); it.hasNext();) {
 //                IAccount iAccount = it.next();
@@ -199,10 +210,10 @@ public class AccountFrm extends JFrame {
 //                rowdata[5] = iAccount.getCurrentBalance();
 //                model.addRow(rowdata);
 //            }
-//            model.send(new Message(accountManager.ACCOUNT_SELECTED, false));
-        } catch (Exception ex) {
-            Logger.getLogger(AccountFrm.class.getName()).log(Level.SEVERE, null, ex);
-        }
+////            model.send(new Message(accountManager.ACCOUNT_SELECTED, false));
+//        } catch (Exception ex) {
+//            Logger.getLogger(AccountFrm.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     public String getAccountNo() {
@@ -241,7 +252,6 @@ public class AccountFrm extends JFrame {
 //            System.exit(1);
 //        }
 //    }
-
     protected ASDPanel JPanel1 = new ASDPanel();
     protected PersonalAccountButton JButton_PerAC = new PersonalAccountButton();
     protected CompanyAccountButton JButton_CompAC = new CompanyAccountButton();
