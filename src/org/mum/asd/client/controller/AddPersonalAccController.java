@@ -31,35 +31,29 @@ public class AddPersonalAccController implements BaseController{
 	}
 
 	
-	public void createAccount(MyAccountType accountType, String name, String ct, String st, String str, String zip, String acnr, String bd, String em) {
-        IAccount account = AppFactory.getFactory(MyAccountType.MYAC).getAccount(accountType);
+	public void createAccount(MyAccountType accType, String name,
+			String city, String state, String street, String zip, String accNum,
+			String dob, String email) throws IllegalArgumentException {
+		
+        IAccount account = AppFactory.getFactory(MyAccountType.MYAC).getAccount(accType);
         IParty party = AppFactory.getFactory(Types.PARTY).getParty(PartyType.PERSONAL);
         
         AAccount absAccount = (AAccount)account;
-        absAccount.setAcctNumber(acnr);
+        absAccount.setAcctNumber(accNum);
         account = absAccount;
         
         Person person = (Person) party;
         person.setName(name);
-        person.setCity(ct);
-        person.setState(st);
-        person.setStreet(str);
+        person.setCity(city);
+        person.setState(state);
+        person.setStreet(street);
         person.setZip(zip);
-        /*try{
-            person.setDateOfBirth(new Date(bd));
-        }catch(IllegalArgumentException e){
-            System.err.println("IllegalArgumentException in setDateOfBirth");
-        }*/
-        person.setEmail(em);
+        person.setDateOfBirth(new Date(dob));
+        person.setEmail(email);
         party = person;
         
         party.addAccount(account);
         account.setParty(party);
-        
-        System.out.println("party.getName(): " + party.getName());
-        
-        System.out.println("is account null? " + account ==null);
-        System.out.println("account.getParty(): " + account.getParty());
         
         AppInitiator.getAccManger().addAccountToList(account);
 

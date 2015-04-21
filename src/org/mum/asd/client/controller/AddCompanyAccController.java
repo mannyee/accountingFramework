@@ -5,13 +5,13 @@ import java.awt.event.ActionEvent;
 import org.mum.asd.client.enums.MyAccountType;
 import org.mum.asd.client.view.bank.AddCompanyAccDialog;
 import org.mum.asd.framework.AccountManager.AAccount;
-import org.mum.asd.framework.AccountManager.AccountManager;
-import org.mum.asd.framework.AccountManager.BasicAccount;
 import org.mum.asd.framework.AccountManager.IAccount;
 import org.mum.asd.framework.controller.BaseController;
+import org.mum.asd.framework.enums.PartyType;
+import org.mum.asd.framework.enums.Types;
+import org.mum.asd.framework.factory.AppFactory;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
 import org.mum.asd.framework.main.AppInitiator;
-import org.mum.asd.framework.partyPattern.AParty;
 import org.mum.asd.framework.partyPattern.Company;
 import org.mum.asd.framework.partyPattern.IParty;
 
@@ -20,7 +20,7 @@ public class AddCompanyAccController implements BaseController {
     //private AccountManager accountManager = null;
 
     public AddCompanyAccController() {
-        //accountManager = ClassicSingleton.getInstanceAccountManager();
+        //accountManager = AppInstantiator.getInstanceAccountManager();
     }
 
     @Override
@@ -32,36 +32,28 @@ public class AddCompanyAccController implements BaseController {
 
     }
 
-    public void createAccount(MyAccountType accountType, String name, String ct, String st, String str, String zip, String acnr, String noe, String em) {
-        AAccount account = new BasicAccount();
-//        AAccount aAccount = 
-        account.setAcctNumber(acnr);
+    public void createAccount(MyAccountType accType, String name, String city, String state, String str, String zip, String accNum, String numEmp, String email) throws NumberFormatException{
+    	IAccount account = AppFactory.getFactory(MyAccountType.MYAC).getAccount(accType);
+        AAccount absAccount = (AAccount)account;
+        absAccount.setAcctNumber(accNum);
+        
+        IParty party = AppFactory.getFactory(Types.PARTY).getParty(PartyType.COMPANY);
+        Company company = (Company)party;
 
-//        account = aAccount;
-//        IParty party=FactoryProducer.getFactory(Types.PARTY).getParty(PartyType.COMPANY);
-        Company c = new Company();
+        company.setName(name);
+        company.setCity(city);
+        company.setState(state);
+        company.setStreet(str);
+		company.setZip(zip);
+		company.setNoOfEmployee(Integer.parseInt(numEmp));
+		company.setEmail(email);
 
-        c.setName(name);
-        c.setCity(ct);
-        c.setState(st);
-        c.setStreet(str);
-        c.setZip(zip);
-
-        try {
-            c.setNoOfEmployee(Integer.parseInt(noe));
-        } catch (NumberFormatException e) {
-            System.err.println("Number formate in noofemplyee");
-            c.setNoOfEmployee(1);
-        }
-        c.setEmail(em);
-//        party=c;
-//        party.addAccount(account);
-
-//        AParty party = new Company();
-//        party = c;
-        account.setParty(c);
-        AccountManager am = AppInitiator.getAccManger();
-        am.addAccountToList(account);
+       
+        party = company;
+        party.addAccount(account);
+        account.setParty(party);
+        
+        AppInitiator.getAccManger().addAccountToList(account);
 
     }
 

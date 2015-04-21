@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author suraj
+ * @author sudell
  */
 public class ASDFrame extends JFrame {
 

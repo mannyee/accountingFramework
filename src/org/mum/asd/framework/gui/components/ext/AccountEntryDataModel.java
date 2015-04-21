@@ -12,7 +12,7 @@ import org.mum.asd.framework.mediator.Mediator;
 
 /**
  *
- * @author suraj
+ * @author sudell
  */
 public class AccountEntryDataModel extends ASDEntryDataModel{
 

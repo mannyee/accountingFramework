@@ -10,7 +10,7 @@ import javax.swing.JButton;
 
 /**
  *
- * @author suraj
+ * @author sudell
  */
 public class CompanyAccountButton extends JButton {
 
