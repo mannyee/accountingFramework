@@ -8,7 +8,6 @@ import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import org.mum.asd.framework.AccountManager.AAccount;
 import org.mum.asd.framework.AccountManager.AccountManager;
 import org.mum.asd.framework.AccountManager.IAccount;
 import org.mum.asd.framework.gui.components.ext.AccountEntryDataModel;
@@ -22,8 +21,8 @@ import org.mum.asd.framework.gui.components.ext.WithdrawButton;
 import org.mum.asd.framework.common.gui.components.asd.ASDPanel;
 import org.mum.asd.framework.common.gui.components.asd.ASDScrollPane;
 import org.mum.asd.framework.main.AppInitiator;
-import org.mum.asd.framework.mediator.IColleague;
 import org.mum.asd.framework.mediator.Mediator;
+import org.mum.asd.framework.mediator.Message;
 import org.mum.asd.framework.partyPattern.AParty;
 import org.mum.asd.framework.partyPattern.Company;
 
@@ -122,6 +121,7 @@ public class AccountFrm extends JFrame {
 //        JButton_Deposit.addActionListener(new DepositController());
 //        JButton_Withdraw.addActionListener(new WithdrawController());
 //        JButton_Addinterest.addActionListener(new InterestController());
+        mediator.send(new Message(Message.ACCOUNT_SELECTED, false));
         table1.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
 
             @Override
@@ -130,7 +130,7 @@ public class AccountFrm extends JFrame {
                     return;
                 }
                 try {
-//                    model.send(new Message(AccountManager.ACCOUNT_SELECTED, true));
+                    mediator.send(new Message(Message.ACCOUNT_SELECTED, true));
                 } catch (Exception ee) {
                     ee.printStackTrace();
                 }
@@ -197,12 +197,14 @@ public class AccountFrm extends JFrame {
             rowdata[0] = acc.getAcctNumber();
             AParty aParty = acc.getParty();
             rowdata[1] = aParty.getName();
+
             rowdata[2] = "";
-            rowdata[3] = aParty.getType();
+            rowdata[3] = "";
             rowdata[4] = acc.getType();
             rowdata[5] = acc.getCurrentBalance();
             model.addRow(rowdata);
         }
+        mediator.send(new Message(Message.ACCOUNT_SELECTED, false));
 //        try {
 //            model.setRowCount(0);
 //            AccountManager accountManager = ClassicSingleton.getInstanceAccountManager();

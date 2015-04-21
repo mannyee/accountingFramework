@@ -29,7 +29,7 @@ public class Mediator implements IMediator {
     }
 
     @Override
-    public void send(IColleague colleague, Message message) {
+    public void send( Message message) {
         for (IColleague c : colleagueList) {
             if (c != colleagueList) {
                 if (c instanceof IReceiverColleague) {

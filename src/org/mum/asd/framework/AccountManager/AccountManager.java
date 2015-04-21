@@ -18,9 +18,6 @@ import org.mum.asd.framework.partyPattern.IParty;
 public class AccountManager implements ISenderColleague {
 
     private static final String NAME = "ACCOUNT_MANAGER";
-    public static final String ACCOUNT_SELECTED = "ACCOUNT_SELECTED";
-    public static final String ACCOUNT_LIST_NOT_EMPTY = "ACCOUNT_LIST_NOT_EMPTY";
-    public static final String UPDATE_ACCOUNT_TABLE = "UPDATE_ACCOUNT_TABLE";
     private Mediator mediator;
 
     public List<IAccount> listOfAccount;
@@ -42,13 +39,13 @@ public class AccountManager implements ISenderColleague {
         System.out.println("c+++" + c);
         // Company c=account.getParty();
         this.listOfAccount.add(account);
-        this.send(new Message(UPDATE_ACCOUNT_TABLE, true));
+        this.send(new Message(Message.UPDATE_ACCOUNT_TABLE, true));
 //        updateAccountTable();
     }
 
     @Override
     public void send(Message message) {
-        mediator.send(this, message);
+        mediator.send(message);
     }
 
     @Override
@@ -57,7 +54,7 @@ public class AccountManager implements ISenderColleague {
     }
 
     public void updateAccountTable() {
-        this.send(new Message(UPDATE_ACCOUNT_TABLE, true));
+        this.send(new Message(Message.UPDATE_ACCOUNT_TABLE, true));
     }
 
 }

@@ -6,6 +6,7 @@
 package org.mum.asd.framework.gui.components.ext;
 
 import javax.swing.JButton;
+import org.mum.asd.framework.AccountManager.AccountManager;
 import org.mum.asd.framework.mediator.IReceiverColleague;
 import org.mum.asd.framework.mediator.Mediator;
 import org.mum.asd.framework.mediator.Message;
@@ -14,7 +15,7 @@ import org.mum.asd.framework.mediator.Message;
  *
  * @author james
  */
-public class WithdrawButton extends JButton implements IReceiverColleague{
+public class WithdrawButton extends JButton implements IReceiverColleague {
 
     private static final String NAME = "WITHDRAW_BUTTON";
     private Mediator mediator;
@@ -29,7 +30,9 @@ public class WithdrawButton extends JButton implements IReceiverColleague{
 
     @Override
     public void receive(Message message) {
-        System.out.println("here");
+        if (message.getAbout().equalsIgnoreCase(Message.ACCOUNT_SELECTED)) {
+            this.setEnabled(message.isStatus());
+        }
     }
 
 }

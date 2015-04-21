@@ -28,7 +28,7 @@ public class AccountListTable extends ASDTable implements IReceiverColleague{
 
     @Override
     public void receive(Message message) {
-        if (message.getAbout().equalsIgnoreCase(AccountManager.UPDATE_ACCOUNT_TABLE)) {
+        if (message.getAbout().equalsIgnoreCase(Message.UPDATE_ACCOUNT_TABLE)) {
             AppInitiator.getAccForm().loadTableWithData();
         }
     }
