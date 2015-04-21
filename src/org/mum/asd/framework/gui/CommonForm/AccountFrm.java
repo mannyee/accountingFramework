@@ -201,7 +201,7 @@ public class AccountFrm extends JFrame {
             rowdata[2] = "";
             rowdata[3] = "";
             rowdata[4] = acc.getType();
-            rowdata[5] = acc.getCurrentBalance();
+            rowdata[5] = acc.getBalance();
             model.addRow(rowdata);
         }
         mediator.send(new Message(Message.ACCOUNT_SELECTED, false));

@@ -12,10 +12,10 @@ public class BasicAccount extends AAccount {
     }
 
     @Override
-    public double getCurrentBalance() {
-        // TODO Auto-generated method stub
-        return 0;
-    }
+	public double getCurrentBalance() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
 	@Override
 	public void setParty(IParty iParty) {

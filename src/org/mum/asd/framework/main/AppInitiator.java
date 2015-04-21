@@ -24,8 +24,8 @@ public class AppInitiator {
         return accForm;
     }
 
-    public static void setAccForm(AccountFrm accForm) {
-        AppInitiator.accForm = accForm;
+    public static void setAccForm(AccountFrm accF) {
+        accForm = accF;
     }
 
     public static AccountManager getAccManger() {
