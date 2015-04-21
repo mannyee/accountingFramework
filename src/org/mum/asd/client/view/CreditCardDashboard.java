@@ -19,7 +19,7 @@ import org.mum.asd.framework.partyPattern.AParty;
 
 /**
  *
- * @author naimi_000
+ * @author minesh
  */
 public class CreditCardDashboard extends AccountFrm {
 
