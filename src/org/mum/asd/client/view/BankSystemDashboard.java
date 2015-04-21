@@ -3,9 +3,14 @@ package org.mum.asd.client.view;
 
 import java.awt.event.ActionListener;
 
-
 import javax.swing.*;
+
+import org.mum.asd.client.controller.AddCompanyAccController;
+import org.mum.asd.client.controller.AddPersonalAccController;
+import org.mum.asd.client.controller.DepositController;
+import org.mum.asd.client.controller.WithdrawController;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
+import org.mum.asd.framework.main.AppInitiator;
 
 /**
  * A basic JFC based application.
@@ -21,7 +26,7 @@ public class BankSystemDashboard extends AccountFrm {
     public static BankSystemDashboard getInstance() {
         if (bank == null) {
             bank = new BankSystemDashboard();
-//            ClassicSingleton.setAccountFrm(bank);
+            AppInitiator.setAccForm(bank);
         }
         return bank;
     }
@@ -43,10 +48,10 @@ public class BankSystemDashboard extends AccountFrm {
             JButton_Withdraw.removeActionListener(al);
         }
 
-//        JButton_CompAC.addActionListener(new AddCompanyController());
-//        JButton_PerAC.addActionListener(new AddPersonController());
-//        JButton_Deposit.addActionListener(new DepositController());
-//        JButton_Withdraw.addActionListener(new WithdrawController());
+        JButton_CompAC.addActionListener(new AddCompanyAccController());
+        JButton_PerAC.addActionListener(new AddPersonalAccController());
+        JButton_Deposit.addActionListener(new DepositController());
+        JButton_Withdraw.addActionListener(new WithdrawController());
     }
 
 }

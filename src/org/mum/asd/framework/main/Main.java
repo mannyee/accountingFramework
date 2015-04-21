@@ -16,7 +16,8 @@ import org.mum.asd.framework.gui.CommonForm.AccountFrm;
  */
 public class Main {
     public static void main(String[] args) {
-        AccountManager am = new AccountManager();
+    	AccountManager accManager = new AccountManager();
+
         AccountFrm form = new BankSystemDashboard();
         form.setVisible(true);
         

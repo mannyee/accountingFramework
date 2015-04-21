@@ -5,6 +5,7 @@
  */
 package org.mum.asd.framework.AccountManager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,10 +14,22 @@ import java.util.List;
  */
 public class AccountManager {
     
-    public List<AAccount> listOfAccount;
+    public List<IAccount> listOfAccount;
+    public AccountManager() {
+    	listOfAccount = new ArrayList<IAccount>();
+	}
     
-    public List<AAccount> getAccountList(){
+    
+    public List<IAccount> getAccountList(){
         
         return listOfAccount;
     }
+    
+    
+    public void addAccountToList(IAccount account) {
+        this.listOfAccount.add(account);
+        //this.send(new Message(ACCOUNT_LIST_NOT_EMPTY, true));
+        //this.updateAccountTable();
+    }
+    
 }

@@ -7,8 +7,10 @@ import java.awt.event.MouseEvent;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+
 import org.mum.asd.framework.AccountManager.AAccount;
 import org.mum.asd.framework.AccountManager.AccountManager;
+import org.mum.asd.framework.AccountManager.IAccount;
 import org.mum.asd.framework.gui.components.ext.AccountEntryDataModel;
 import org.mum.asd.framework.gui.components.ext.AccountListTable;
 import org.mum.asd.framework.gui.components.ext.AddInterestButton;
@@ -19,6 +21,7 @@ import org.mum.asd.framework.gui.components.ext.PersonalAccountButton;
 import org.mum.asd.framework.gui.components.ext.WithdrawButton;
 import org.mum.asd.framework.common.gui.components.asd.ASDPanel;
 import org.mum.asd.framework.common.gui.components.asd.ASDScrollPane;
+import org.mum.asd.framework.main.AppInitiator;
 import org.mum.asd.framework.mediator.Mediator;
 import org.mum.asd.framework.partyPattern.AParty;
 
@@ -182,16 +185,18 @@ public class AccountFrm extends JFrame {
     }
 
     public void loadTableWithData() {
+    	System.out.println("inside the loadTable");
+    	
 
-        AccountManager ac = new AccountManager();
-        for (AAccount acc : ac.getAccountList()) {
+        AccountManager ac = AppInitiator.getAccManger();
+        for (IAccount acc : ac.getAccountList()) {
             rowdata = new Object[8];
             rowdata[0] = acc.getAcctNumber();
             AParty aParty = (AParty) acc.getParty();
             rowdata[1] = aParty.getName();
             rowdata[2] = "";
             rowdata[3] = aParty.getType();
-            rowdata[4] = acc.getType();
+            rowdata[4] = "test"; //acc.getType();
             rowdata[5] = acc.getCurrentBalance();
             model.addRow(rowdata);
         }

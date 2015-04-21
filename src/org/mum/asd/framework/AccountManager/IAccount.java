@@ -18,6 +18,8 @@ public interface IAccount {
     public double getCurrentBalance();
     
      public String getAcctNumber();
+     
+     public void setAcctNumber(String accNum);
 
     public IParty getParty();
 }

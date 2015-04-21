@@ -1,11 +1,21 @@
 package org.mum.asd.framework.partyPattern;
 
 public interface IParty {
-//	public void addAcccount(Account account);
-//	public void removeAccount(Account account);
-	//public void sendEmail(Functor f, Predicate p);
+	/*public void addAccount(IAccount account);
+
+	public void removeAccount(IAccount account);
+
+	public void sendEmail(IFunctor f, IPredicate p, double amount);
+
 	public String getType();
+
 	public String getName();
+
 	public void setName(String name);
-	public double getBalance();
+
+	public IPredicate getDepositPredicate();
+
+	public IPredicate getWithdrawPredicate();
+
+	public double getBalance();*/
 }

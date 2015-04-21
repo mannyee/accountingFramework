@@ -66,4 +66,5 @@ public abstract class AParty implements IParty {
         this.type = type;
     }
 
+
 }

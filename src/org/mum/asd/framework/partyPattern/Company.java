@@ -11,18 +11,23 @@ package org.mum.asd.framework.partyPattern;
  */
 public class Company extends AParty implements ICompany {
 
-    private Integer employeeNumber;
+	private Integer employeeNumber;
 
-    public double getBalance() {
-        return 0d;
-    }
+	public double getBalance() {
+		return 0d;
+	}
 
-    public Integer getEmployeeNumber() {
-        return employeeNumber;
-    }
+	public Integer getEmployeeNumber() {
+		return employeeNumber;
+	}
 
-    public void setEmployeeNumber(Integer employeeNumber) {
-        this.employeeNumber = employeeNumber;
-    }
+	public void setEmployeeNumber(Integer employeeNumber) {
+		this.employeeNumber = employeeNumber;
+	}
+
+	public void setNoOfEmployee(Integer parseInt) {
+		this.employeeNumber = parseInt;
+
+	}
 
 }
