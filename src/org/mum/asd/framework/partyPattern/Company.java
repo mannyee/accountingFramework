@@ -9,11 +9,12 @@ import org.mum.asd.framework.AccountManager.IAccount;
 
 /**
  *
- * @author Raj
+ * @author dell
  */
-public class Company extends AParty {
+public class Company extends AParty implements ICompany{
 
     private Integer employeeNumber;
+    private final String type = "C";
 
     public double getBalance() {
         return 0d;
@@ -39,6 +40,10 @@ public class Company extends AParty {
 	public void removeAccount(IAccount account) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public String getType(){
+		return type;
 	}
 
 }

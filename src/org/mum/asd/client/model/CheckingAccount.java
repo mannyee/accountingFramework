@@ -7,7 +7,7 @@ import org.mum.asd.framework.transaction.ITransaction;
 public class CheckingAccount extends AAccount {
 
 	public CheckingAccount() {
-		//super.setType("Ch");
+		super.setType("Ch");
 	}
 
 	@Override
@@ -18,13 +18,12 @@ public class CheckingAccount extends AAccount {
 
 	@Override
 	public double getCurrentBalance() {
-		// TODO Auto-generated method stub
-		return 0;
+		return super.getBalance();
 	}
 
 	@Override
 	public void setParty(IParty iParty) {
-		// TODO Auto-generated method stub
+		super.setParty(iParty);
 		
 	}
 

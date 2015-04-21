@@ -5,7 +5,7 @@ import java.util.Date;
 import org.mum.asd.framework.AccountManager.IAccount;
 
 public class Person extends AParty implements IPerson{
-	private Date dateOfBirth=new Date("08/08/2012");
+	private Date dateOfBirth;
     private final String type = "P";
 
     public Date getDateOfBirth() {

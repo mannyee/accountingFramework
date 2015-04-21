@@ -10,7 +10,7 @@ import javax.swing.JDialog;
 
 /**
  *
- * @author suraj
+ * @author sudell
  */
 public class ASDDialog extends JDialog {
 

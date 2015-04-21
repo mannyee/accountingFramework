@@ -196,10 +196,10 @@ public class AccountFrm extends JFrame {
             rowdata = new Object[8];
             rowdata[0] = acc.getAcctNumber();
             AParty aParty = (AParty) acc.getParty();
-            rowdata[1] = "";//aParty.getName();
+            rowdata[1] = aParty.getName();
 
-            rowdata[2] = "";
-            rowdata[3] = "";
+            rowdata[2] = aParty.getCity();
+            rowdata[3] = aParty.getType();
             rowdata[4] = acc.getType();
             rowdata[5] = acc.getCurrentBalance();
             model.addRow(rowdata);
