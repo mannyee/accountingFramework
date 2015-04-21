@@ -26,9 +26,9 @@ public class AddCompanyAccController implements BaseController {
     @Override
     public void actionPerformed(ActionEvent ae) {
         AccountFrm accountFrm = AppInitiator.getAccForm();
-        AddCompanyAccDialog pac = new AddCompanyAccDialog(accountFrm);
-        pac.setBounds(450, 20, 300, 330);
-        pac.show();
+        AddCompanyAccDialog dialog = new AddCompanyAccDialog(accountFrm);
+        dialog.setBounds(450, 20, 300, 330);
+        dialog.show();
 
     }
 
