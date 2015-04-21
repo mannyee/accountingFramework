@@ -11,6 +11,9 @@ package org.mum.asd.framework.mediator;
  */
 public class Message {
 
+    public static final String ACCOUNT_SELECTED = "ACCOUNT_SELECTED";
+    public static final String ACCOUNT_LIST_NOT_EMPTY = "ACCOUNT_LIST_NOT_EMPTY";
+    public static final String UPDATE_ACCOUNT_TABLE = "UPDATE_ACCOUNT_TABLE";
     private String about;
     private boolean status;
 

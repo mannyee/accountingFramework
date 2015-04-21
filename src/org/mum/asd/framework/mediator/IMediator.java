@@ -11,7 +11,7 @@ package org.mum.asd.framework.mediator;
  */
 public interface IMediator {
 
-    public void send(IColleague colleague, Message message);
+    public void send(Message message);
 
     public void addColleague(IColleague colleague);
 }

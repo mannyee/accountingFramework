@@ -5,8 +5,8 @@
  */
 package org.mum.asd.framework.gui.components.ext;
 
-import static javafx.scene.input.KeyCode.I;
 import javax.swing.JButton;
+import org.mum.asd.framework.AccountManager.AccountManager;
 import org.mum.asd.framework.mediator.IReceiverColleague;
 import org.mum.asd.framework.mediator.Mediator;
 import org.mum.asd.framework.mediator.Message;
@@ -30,7 +30,9 @@ public class DepositButton extends JButton implements IReceiverColleague {
 
     @Override
     public void receive(Message message) {
-        System.out.println("herere");
+        if (message.getAbout().equalsIgnoreCase(Message.ACCOUNT_SELECTED)) {
+            this.setEnabled(message.isStatus());
+        }
     }
 
 }
