@@ -4,11 +4,11 @@ import javax.swing.ButtonGroup;
 
 import org.mum.asd.framework.common.gui.components.asd.ASDDialog;
 
-public class JDialog_AddAccount extends ASDDialog{
+public class JDialog_AddAccount extends ASDDialog {
 
-	private AccountFrm parentframe;
+    private AccountFrm parentframe;
     //protected SymMouse aSymMouse = new SymMouse();
-    protected ButtonGroup buttonGroup=new ButtonGroup();
+    protected ButtonGroup buttonGroup = new ButtonGroup();
 
     public JDialog_AddAccount(AccountFrm parent) {
         super(parent);
@@ -94,7 +94,6 @@ public class JDialog_AddAccount extends ASDDialog{
 		//}}
 
         //{{REGISTER_LISTENERS
-        
         //JRadioButton_Chk.addMouseListener(aSymMouse);
         //JRadioButton_Sav.addMouseListener(aSymMouse);
         SymAction lSymAction = new SymAction();
@@ -124,7 +123,6 @@ public class JDialog_AddAccount extends ASDDialog{
     protected javax.swing.JButton JButton_Cancel = new javax.swing.JButton();
     protected javax.swing.JTextField JTextField_ACNR = new javax.swing.JTextField();
     protected javax.swing.JLabel JLabel8 = new javax.swing.JLabel();
-   
 
     protected class SymAction implements java.awt.event.ActionListener {
 
@@ -146,5 +144,5 @@ public class JDialog_AddAccount extends ASDDialog{
         dispose();
         setVisible(false);
     }
-	
+
 }
