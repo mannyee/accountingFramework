@@ -62,6 +62,6 @@ public class AddPersonalAccController implements BaseController{
         System.out.println("account.getParty(): " + account.getParty());
         
         AppInitiator.getAccManger().addAccountToList(account);
-        
+
     }
 }

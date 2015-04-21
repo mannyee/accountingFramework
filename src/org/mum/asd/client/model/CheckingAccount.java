@@ -16,7 +16,6 @@ public class CheckingAccount extends AAccount {
 
 	}
 
-	@Override
 	public double getCurrentBalance() {
 		// TODO Auto-generated method stub
 		return 0;

@@ -18,8 +18,10 @@ public class Main {
     public static void main(String[] args) {
         AppInitiator.getMediator();
         AccountFrm form = new BankSystemDashboard();
-        form.setVisible(true);
+//        form.setVisible(true);
         AppInitiator.setAccForm(form);
+        
+        AppInitiator.getAccForm().setVisible(true);
         
     }
 }

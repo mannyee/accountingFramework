@@ -13,19 +13,21 @@ import org.mum.asd.framework.transaction.ITransaction;
  * @author dell
  */
 public interface IAccount {
-   
-	public void addEntry(ITransaction transaction);
 
-	public double getCurrentBalance();
+    public void addEntry(ITransaction transaction);
 
-	public String getAcctNumber();
+    public void setBalance(Double balance);
 
-	public void setAcctNumber(String accNum);
+    public Double getBalance();
 
-	public IParty getParty();
+    public String getAcctNumber();
 
-	public void setParty(IParty iParty);
+    public void setAcctNumber(String accNum);
 
-	public String getType();
+    public IParty getParty();
+
+    public void setParty(IParty iParty);
+
+    public String getType();
 
 }
