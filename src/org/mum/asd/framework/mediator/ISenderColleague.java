@@ -7,7 +7,7 @@ package org.mum.asd.framework.mediator;
 
 /**
  *
- * @author james
+ * @author suraj
  */
 public interface ISenderColleague extends IColleague {
 

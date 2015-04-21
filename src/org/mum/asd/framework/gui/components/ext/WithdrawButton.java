@@ -13,7 +13,7 @@ import org.mum.asd.framework.mediator.Message;
 
 /**
  *
- * @author james
+ * @author suraj
  */
 public class WithdrawButton extends JButton implements IReceiverColleague {
 

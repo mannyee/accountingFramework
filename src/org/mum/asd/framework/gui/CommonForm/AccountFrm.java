@@ -195,8 +195,8 @@ public class AccountFrm extends JFrame {
         for (IAccount acc : ac.getAccountList()) {
             rowdata = new Object[8];
             rowdata[0] = acc.getAcctNumber();
-            AParty aParty = acc.getParty();
-            rowdata[1] = aParty.getName();
+            AParty aParty = (AParty) acc.getParty();
+            rowdata[1] = "";//aParty.getName();
 
             rowdata[2] = "";
             rowdata[3] = "";

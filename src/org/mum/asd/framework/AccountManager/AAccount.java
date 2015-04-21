@@ -19,7 +19,7 @@ public abstract class AAccount implements IAccount {
     private String acctNumber;
     private List<ITransaction> transactions;
     private double balance;
-    private AParty iParty;
+    private IParty iParty;
     private String type;
 
     public String getAcctNumber() {
@@ -46,12 +46,11 @@ public abstract class AAccount implements IAccount {
         this.balance = balance;
     }
 
-    public AParty getParty() {
-       // System.out.println("get ipart+++ " + this.iParty);
+    public IParty getParty() {
         return iParty;
     }
 
-    public void setParty(AParty iParty) {
+    public void setParty(IParty iParty) {
         this.iParty = iParty;
     }
 

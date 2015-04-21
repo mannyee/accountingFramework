@@ -1,5 +1,10 @@
 package org.mum.asd.framework.partyPattern;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.mum.asd.framework.AccountManager.IAccount;
+
 public abstract class AParty implements IParty {
 
     private String name;
@@ -9,6 +14,11 @@ public abstract class AParty implements IParty {
     private String zip;
     private String email;
     private String type;
+    private List<IAccount> accountList;
+    
+    public AParty() {
+    	accountList = new ArrayList<>();
+	}
 
     public String getName() {
         return name;
@@ -65,6 +75,13 @@ public abstract class AParty implements IParty {
     public void setType(String type) {
         this.type = type;
     }
+    
+    @Override
+    public void addAccount(IAccount account) {
+        this.accountList.add(account);
+        account.setParty(this);
+    }
+
 
 
 }

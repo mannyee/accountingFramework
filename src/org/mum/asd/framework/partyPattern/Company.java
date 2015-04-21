@@ -5,6 +5,8 @@
  */
 package org.mum.asd.framework.partyPattern;
 
+import org.mum.asd.framework.AccountManager.IAccount;
+
 /**
  *
  * @author Raj
@@ -32,5 +34,11 @@ public class Company extends AParty {
     public AParty getParty() {
         return this;
     }
+
+	@Override
+	public void removeAccount(IAccount account) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

@@ -1,6 +1,5 @@
 package org.mum.asd.framework.AccountManager;
 
-import org.mum.asd.framework.partyPattern.AParty;
 import org.mum.asd.framework.partyPattern.IParty;
 import org.mum.asd.framework.transaction.ITransaction;
 
@@ -17,6 +16,12 @@ public class BasicAccount extends AAccount {
         // TODO Auto-generated method stub
         return 0;
     }
+
+	@Override
+	public void setParty(IParty iParty) {
+		// TODO Auto-generated method stub
+		
+	}
 
 //	@Override
 //	public AParty getParty() {

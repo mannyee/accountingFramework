@@ -10,7 +10,7 @@ import javax.swing.table.TableModel;
 
 /**
  *
- * @author james
+ * @author suraj
  */
 public class ASDTable extends JTable {
 

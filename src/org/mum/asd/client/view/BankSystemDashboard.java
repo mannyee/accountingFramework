@@ -9,6 +9,9 @@ import org.mum.asd.client.controller.AddCompanyAccController;
 import org.mum.asd.client.controller.AddPersonalAccController;
 import org.mum.asd.client.controller.DepositController;
 import org.mum.asd.client.controller.WithdrawController;
+import org.mum.asd.client.enums.MyAccountType;
+import org.mum.asd.client.model.MyAccountFactory;
+import org.mum.asd.framework.factory.AppFactory;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
 import org.mum.asd.framework.main.AppInitiator;
 
@@ -18,7 +21,7 @@ import org.mum.asd.framework.main.AppInitiator;
 public class BankSystemDashboard extends AccountFrm {
 
     static {
-//        FactoryProducer.addAbstractFactory(MyAccountType.MYAC, new MyAccountFactory());
+        AppFactory.addAbstractFactory(MyAccountType.MYAC, new MyAccountFactory());
     }
 
     public static BankSystemDashboard bank;

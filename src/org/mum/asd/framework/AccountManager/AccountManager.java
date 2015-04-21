@@ -33,7 +33,7 @@ public class AccountManager implements ISenderColleague {
 
     public void addAccountToList(IAccount account) {
         System.out.println(account.getParty());
-        AParty a = account.getParty();
+        AParty a = (AParty) account.getParty();
         System.out.println("a ++" + a);
         IParty c = account.getParty();
         System.out.println("c+++" + c);

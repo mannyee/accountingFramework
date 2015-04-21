@@ -12,7 +12,7 @@ import org.mum.asd.framework.mediator.IMediator;
 
 /**
  *
- * @author james
+ * @author suraj
  */
 public class Mediator implements IMediator {
 
@@ -30,9 +30,15 @@ public class Mediator implements IMediator {
 
     @Override
     public void send( Message message) {
+    	System.out.println("message received");
+    	
         for (IColleague c : colleagueList) {
+        	System.out.println("c.class: " + c.getClass());
             if (c != colleagueList) {
                 if (c instanceof IReceiverColleague) {
+                	
+                	
+                	
                      ((IReceiverColleague) c).receive(message);
                 }
             }

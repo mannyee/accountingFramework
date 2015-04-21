@@ -14,7 +14,6 @@ import org.mum.asd.framework.main.AppInitiator;
 import org.mum.asd.framework.partyPattern.AParty;
 import org.mum.asd.framework.partyPattern.Company;
 import org.mum.asd.framework.partyPattern.IParty;
-import org.mum.asd.framework.singleton.ClassicSingleton;
 
 public class AddCompanyAccController implements BaseController {
     //TODO add account manager here, maybe utilise basecontroller here

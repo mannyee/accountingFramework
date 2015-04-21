@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author james
+ * @author suraj
  */
 public class ASDPanel extends JPanel {
 

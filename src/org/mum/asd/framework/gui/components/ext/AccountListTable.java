@@ -12,11 +12,10 @@ import org.mum.asd.framework.common.gui.components.asd.ASDTable;
 import org.mum.asd.framework.main.AppInitiator;
 import org.mum.asd.framework.mediator.IReceiverColleague;
 import org.mum.asd.framework.mediator.Message;
-import org.mum.asd.framework.singleton.ClassicSingleton;
 
 /**
  *
- * @author james
+ * @author suraj
  */
 public class AccountListTable extends ASDTable implements IReceiverColleague{
 

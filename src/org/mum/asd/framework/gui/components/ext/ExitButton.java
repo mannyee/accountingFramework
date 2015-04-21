@@ -10,7 +10,7 @@ import javax.swing.JButton;
 
 /**
  *
- * @author james
+ * @author suraj
  */
 public class ExitButton extends JButton {
 

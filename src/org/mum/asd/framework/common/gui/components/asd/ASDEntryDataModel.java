@@ -9,7 +9,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author james
+ * @author suraj
  */
 public class ASDEntryDataModel extends DefaultTableModel {
 
