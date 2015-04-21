@@ -13,58 +13,57 @@ import org.mum.asd.framework.gui.CommonForm.AccountFrm;
 import org.mum.asd.framework.main.AppInitiator;
 import org.mum.asd.framework.partyPattern.AParty;
 import org.mum.asd.framework.partyPattern.Company;
+import org.mum.asd.framework.partyPattern.IParty;
 import org.mum.asd.framework.singleton.ClassicSingleton;
 
+public class AddCompanyAccController implements BaseController {
+    //TODO add account manager here, maybe utilise basecontroller here
+    //private AccountManager accountManager = null;
 
+    public AddCompanyAccController() {
+        //accountManager = ClassicSingleton.getInstanceAccountManager();
+    }
 
-public class AddCompanyAccController implements BaseController{
-	//TODO add account manager here, maybe utilise basecontroller here
-	//private AccountManager accountManager = null;
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        AccountFrm accountFrm = AppInitiator.getAccForm();
+        AddCompanyAccDialog pac = new AddCompanyAccDialog(accountFrm);
+        pac.setBounds(450, 20, 300, 330);
+        pac.show();
 
-	public AddCompanyAccController() {
-		//accountManager = ClassicSingleton.getInstanceAccountManager();
-	}
-	
-	
-	@Override
-	public void actionPerformed(ActionEvent ae) {
-		AccountFrm accountFrm = ClassicSingleton.getInstanceAccountFrm();
-		AddCompanyAccDialog pac = new AddCompanyAccDialog(accountFrm);
-		pac.setBounds(450, 20, 300, 330);
-		pac.show();
-		
-	}
-	
-	
-	
-	public void createAccount(MyAccountType accountType,String name,String ct,String st,String str,String zip
-            ,String acnr,String noe,String em){
-        IAccount account = new BasicAccount();
+    }
+
+    public void createAccount(MyAccountType accountType, String name, String ct, String st, String str, String zip, String acnr, String noe, String em) {
+        AAccount account = new BasicAccount();
 //        AAccount aAccount = 
         account.setAcctNumber(acnr);
-        
+
 //        account = aAccount;
 //        IParty party=FactoryProducer.getFactory(Types.PARTY).getParty(PartyType.COMPANY);
-        Company c= new Company();
+        Company c = new Company();
+
         c.setName(name);
         c.setCity(ct);
         c.setState(st);
         c.setStreet(str);
         c.setZip(zip);
-        try{
+
+        try {
             c.setNoOfEmployee(Integer.parseInt(noe));
-        }catch(NumberFormatException e){
+        } catch (NumberFormatException e) {
             System.err.println("Number formate in noofemplyee");
             c.setNoOfEmployee(1);
         }
         c.setEmail(em);
 //        party=c;
 //        party.addAccount(account);
-        AppInitiator.getAccManger().addAccountToList(account);
-        AccountManager ac = AppInitiator.getAccManger();
-        for (IAccount acc : ac.getAccountList()) {
-            System.out.println("here+++ "+acc.getAcctNumber());
-        }
+
+        IParty party = new Company();
+        party=c;
+        account.setParty(party);
+        AccountManager am = AppInitiator.getAccManger();
+        am.addAccountToList(account);
+
     }
 
 }

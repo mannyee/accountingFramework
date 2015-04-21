@@ -2,31 +2,53 @@ package org.mum.asd.framework.main;
 
 import org.mum.asd.framework.AccountManager.AccountManager;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
+import org.mum.asd.framework.mediator.Mediator;
 
 public class AppInitiator {
-	private static AccountFrm accForm = null;
-	private static AccountManager accManager = null;
 
-	public static AccountFrm getAccForm() {
+    private static AccountFrm accForm = null;
+    private static AccountManager accManager = null;
+    private static Mediator mediator = null;
+
+//    static {
+//        accForm = new AccountFrm();
+//        accManager = new AccountManager(getMediator());
+//        mediator = new Mediator();
+//
+//    }
+
+    public static AccountFrm getAccForm() {
 		if(accForm == null){
-			accForm = new AccountFrm();
-		}
-		return accForm;
-	}
+            accForm = new AccountFrm();
+        }
+        return accForm;
+    }
 
-	public static void setAccForm(AccountFrm accForm) {
-		AppInitiator.accForm = accForm;
-	}
+    public static void setAccForm(AccountFrm accForm) {
+        AppInitiator.accForm = accForm;
+    }
 
-	public static AccountManager getAccManger() {
-		if(accManager == null)
-			accManager = new AccountManager();
-		
-		return accManager;
-	}
+    public static AccountManager getAccManger() {
+        if (accManager == null) {
+            accManager = new AccountManager(getMediator());
+        }
 
-	public static void setAccManger(AccountManager accManger) {
-		AppInitiator.accManager = accManger;
-	}
+        return accManager;
+    }
+
+    public static void setAccManger(AccountManager accManger) {
+        AppInitiator.accManager = accManger;
+    }
+
+    public static Mediator getMediator() {
+        if (mediator == null) {
+            mediator = new Mediator();
+        }
+        return mediator;
+    }
+
+    public static void setMediator(Mediator mediator) {
+        AppInitiator.mediator = mediator;
+    }
 
 }

@@ -45,11 +45,12 @@ public abstract class AAccount implements IAccount{
         this.balance = balance;
     }
 
-    public IParty getiParty() {
+    public IParty getParty() {
+        System.out.println("get ipart+++ "+this.iParty);
         return iParty;
     }
 
-    public void setiParty(IParty iParty) {
+    public void setParty(IParty iParty) {
         this.iParty = iParty;
     }
 

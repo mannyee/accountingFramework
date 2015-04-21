@@ -22,4 +22,6 @@ public interface IAccount {
      public void setAcctNumber(String accNum);
 
     public IParty getParty();
+    
+    public String getType();
 }

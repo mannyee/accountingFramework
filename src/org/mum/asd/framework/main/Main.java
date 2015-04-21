@@ -16,10 +16,10 @@ import org.mum.asd.framework.gui.CommonForm.AccountFrm;
  */
 public class Main {
     public static void main(String[] args) {
-    	AccountManager accManager = new AccountManager();
-
+        AppInitiator.getMediator();
         AccountFrm form = new BankSystemDashboard();
         form.setVisible(true);
+        AppInitiator.setAccForm(form);
         
     }
 }

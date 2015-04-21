@@ -22,8 +22,10 @@ import org.mum.asd.framework.gui.components.ext.WithdrawButton;
 import org.mum.asd.framework.common.gui.components.asd.ASDPanel;
 import org.mum.asd.framework.common.gui.components.asd.ASDScrollPane;
 import org.mum.asd.framework.main.AppInitiator;
+import org.mum.asd.framework.mediator.IColleague;
 import org.mum.asd.framework.mediator.Mediator;
 import org.mum.asd.framework.partyPattern.AParty;
+import org.mum.asd.framework.partyPattern.Company;
 
 /**
  * A basic JFC based application.
@@ -53,7 +55,7 @@ public class AccountFrm extends JFrame {
     public AccountFrm() {
 
         myframe = this;
-//        mediator = ClassicSingleton.getMediator();
+        mediator = AppInitiator.getMediator();
 
         setTitle("Account Application");
 
@@ -109,10 +111,11 @@ public class AccountFrm extends JFrame {
         SymWindow aSymWindow = new SymWindow();
         this.addWindowListener(aSymWindow);
 
-//        mediator.addColleague(JButton_Deposit);
-//        mediator.addColleague(JButton_Withdraw);
-//        mediator.addColleague(JButton_Addinterest);
-//        mediator.addColleague(table1);
+        mediator.addColleague(JButton_Deposit);
+        mediator.addColleague(JButton_Withdraw);
+        mediator.addColleague(JButton_Addinterest);
+        mediator.addColleague(table1);
+
 //        JButton_Exit.addActionListener(new ExitController());
 //        JButton_PerAC.addActionListener(new AccountController());
 //        JButton_CompAC.addActionListener(new AccountController());
@@ -185,18 +188,18 @@ public class AccountFrm extends JFrame {
     }
 
     public void loadTableWithData() {
-    	System.out.println("inside the loadTable");
-    	
+        System.out.println("inside the loadTable");
 
+        model.setRowCount(0);
         AccountManager ac = AppInitiator.getAccManger();
         for (IAccount acc : ac.getAccountList()) {
             rowdata = new Object[8];
             rowdata[0] = acc.getAcctNumber();
-            AParty aParty = (AParty) acc.getParty();
+            AParty aParty = (Company) acc.getParty();
             rowdata[1] = aParty.getName();
             rowdata[2] = "";
             rowdata[3] = aParty.getType();
-            rowdata[4] = "test"; //acc.getType();
+            rowdata[4] = acc.getType();
             rowdata[5] = acc.getCurrentBalance();
             model.addRow(rowdata);
         }

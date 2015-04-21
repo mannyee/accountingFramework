@@ -7,29 +7,30 @@ package org.mum.asd.framework.gui.components.ext;
 
 import static javafx.scene.input.KeyCode.I;
 import javax.swing.JButton;
+import org.mum.asd.framework.mediator.IReceiverColleague;
 import org.mum.asd.framework.mediator.Mediator;
 import org.mum.asd.framework.mediator.Message;
-
-
 
 /**
  *
  * @author james
  */
-public class DepositButton extends JButton  {
+public class DepositButton extends JButton implements IReceiverColleague {
 
     private static final String NAME = "DEPOSIT_BUTTON";
-  private Mediator mediator;
+    private Mediator mediator;
 
     public DepositButton(Mediator mediator) {
         this.mediator = mediator;
     }
 
- 
-
     public static String getNAME() {
         return NAME;
     }
-    
+
+    @Override
+    public void receive(Message message) {
+        System.out.println("herere");
+    }
 
 }
