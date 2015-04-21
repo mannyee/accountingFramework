@@ -7,21 +7,20 @@ public class BasicAccount extends AAccount {
 
     @Override
     public void addEntry(ITransaction transaction) {
-		// TODO Auto-generated method stub
+        // TODO Auto-generated method stub
 
     }
 
-    @Override
     public double getCurrentBalance() {
         // TODO Auto-generated method stub
         return 0;
     }
 
-	@Override
-	public void setParty(IParty iParty) {
+    @Override
+    public void setParty(IParty iParty) {
 		// TODO Auto-generated method stub
-		
-	}
+
+    }
 
 //	@Override
 //	public AParty getParty() {

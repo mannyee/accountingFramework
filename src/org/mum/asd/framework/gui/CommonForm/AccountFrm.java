@@ -7,6 +7,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import org.mum.asd.client.controller.ExitController;
 
 import org.mum.asd.framework.AccountManager.AccountManager;
 import org.mum.asd.framework.AccountManager.IAccount;
@@ -115,7 +116,7 @@ public class AccountFrm extends JFrame {
         mediator.addColleague(JButton_Addinterest);
         mediator.addColleague(table1);
 
-//        JButton_Exit.addActionListener(new ExitController());
+        JButton_Exit.addActionListener(new ExitController());
 //        JButton_PerAC.addActionListener(new AccountController());
 //        JButton_CompAC.addActionListener(new AccountController());
 //        JButton_Deposit.addActionListener(new DepositController());
@@ -201,7 +202,7 @@ public class AccountFrm extends JFrame {
             rowdata[2] = aParty.getCity();
             rowdata[3] = aParty.getType();
             rowdata[4] = acc.getType();
-            rowdata[5] = acc.getCurrentBalance();
+            rowdata[5] = acc.getBalance();
             model.addRow(rowdata);
         }
         mediator.send(new Message(Message.ACCOUNT_SELECTED, false));

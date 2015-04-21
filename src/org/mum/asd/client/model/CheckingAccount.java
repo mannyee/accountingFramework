@@ -16,7 +16,6 @@ public class CheckingAccount extends AAccount {
 
 	}
 
-	@Override
 	public double getCurrentBalance() {
 		return super.getBalance();
 	}

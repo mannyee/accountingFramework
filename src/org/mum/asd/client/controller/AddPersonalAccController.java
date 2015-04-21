@@ -56,6 +56,6 @@ public class AddPersonalAccController implements BaseController{
         account.setParty(party);
         
         AppInitiator.getAccManger().addAccountToList(account);
-        
+
     }
 }
