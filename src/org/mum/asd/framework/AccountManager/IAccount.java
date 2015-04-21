@@ -30,4 +30,5 @@ public interface IAccount {
 
     public String getType();
 
+    public Double getInterest();
 }

@@ -55,6 +55,7 @@ public class BankSystemDashboard extends AccountFrm {
         JButton_PerAC.addActionListener(new AddPersonalAccController());
         JButton_Deposit.addActionListener(new DepositController());
         JButton_Withdraw.addActionListener(new WithdrawController());
+        
     }
 
 }

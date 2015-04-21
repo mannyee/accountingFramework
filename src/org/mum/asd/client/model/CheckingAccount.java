@@ -27,4 +27,9 @@ public class CheckingAccount extends AAccount {
 		
 	}
 
+    @Override
+    public Double getInterest() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

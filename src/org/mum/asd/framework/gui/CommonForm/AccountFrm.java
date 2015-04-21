@@ -8,6 +8,7 @@ import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import org.mum.asd.client.controller.ExitController;
+import org.mum.asd.client.controller.InterestController;
 
 import org.mum.asd.framework.AccountManager.AccountManager;
 import org.mum.asd.framework.AccountManager.IAccount;
@@ -121,7 +122,7 @@ public class AccountFrm extends JFrame {
 //        JButton_CompAC.addActionListener(new AccountController());
 //        JButton_Deposit.addActionListener(new DepositController());
 //        JButton_Withdraw.addActionListener(new WithdrawController());
-//        JButton_Addinterest.addActionListener(new InterestController());
+        JButton_Addinterest.addActionListener(new InterestController());
         mediator.send(new Message(Message.ACCOUNT_SELECTED, false));
         table1.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
 
