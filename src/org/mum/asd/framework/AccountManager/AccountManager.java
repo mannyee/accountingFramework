@@ -11,11 +11,10 @@ import org.mum.asd.framework.mediator.IColleague;
 import org.mum.asd.framework.mediator.ISenderColleague;
 import org.mum.asd.framework.mediator.Mediator;
 import org.mum.asd.framework.mediator.Message;
+import org.mum.asd.framework.partyPattern.AParty;
+import org.mum.asd.framework.partyPattern.IParty;
 
-/**
- *
- * @author dell
- */
+
 public class AccountManager implements ISenderColleague {
 
     private static final String NAME = "ACCOUNT_MANAGER";
@@ -37,6 +36,11 @@ public class AccountManager implements ISenderColleague {
 
     public void addAccountToList(IAccount account) {
         System.out.println(account.getParty());
+        AParty a = account.getParty();
+        System.out.println("a ++" + a);
+        IParty c = account.getParty();
+        System.out.println("c+++" + c);
+        // Company c=account.getParty();
         this.listOfAccount.add(account);
         this.send(new Message(UPDATE_ACCOUNT_TABLE, true));
 //        updateAccountTable();

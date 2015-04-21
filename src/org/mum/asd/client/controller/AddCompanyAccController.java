@@ -58,9 +58,9 @@ public class AddCompanyAccController implements BaseController {
 //        party=c;
 //        party.addAccount(account);
 
-        IParty party = new Company();
-        party=c;
-        account.setParty(party);
+//        AParty party = new Company();
+//        party = c;
+        account.setParty(c);
         AccountManager am = AppInitiator.getAccManger();
         am.addAccountToList(account);
 

@@ -6,6 +6,7 @@
 package org.mum.asd.framework.AccountManager;
 
 import java.util.List;
+import org.mum.asd.framework.partyPattern.AParty;
 import org.mum.asd.framework.partyPattern.IParty;
 import org.mum.asd.framework.transaction.ITransaction;
 
@@ -13,12 +14,12 @@ import org.mum.asd.framework.transaction.ITransaction;
  *
  * @author dell
  */
-public abstract class AAccount implements IAccount{
+public abstract class AAccount implements IAccount {
 
     private String acctNumber;
     private List<ITransaction> transactions;
     private double balance;
-    private IParty iParty;
+    private AParty iParty;
     private String type;
 
     public String getAcctNumber() {
@@ -45,12 +46,12 @@ public abstract class AAccount implements IAccount{
         this.balance = balance;
     }
 
-    public IParty getParty() {
-        System.out.println("get ipart+++ "+this.iParty);
+    public AParty getParty() {
+       // System.out.println("get ipart+++ " + this.iParty);
         return iParty;
     }
 
-    public void setParty(IParty iParty) {
+    public void setParty(AParty iParty) {
         this.iParty = iParty;
     }
 
