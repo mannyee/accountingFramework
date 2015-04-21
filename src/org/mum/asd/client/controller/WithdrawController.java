@@ -2,6 +2,7 @@ package org.mum.asd.client.controller;
 
 import com.sun.xml.internal.ws.wsdl.writer.document.Types;
 import java.awt.event.ActionEvent;
+import javax.swing.JOptionPane;
 import org.mum.asd.client.view.bank.WithdrawDialog;
 import org.mum.asd.framework.AccountManager.AccountManager;
 import org.mum.asd.framework.AccountManager.IAccount;
@@ -24,11 +25,18 @@ public class WithdrawController implements BaseController {
     @Override
     public void actionPerformed(ActionEvent ae) {
         // TODO Auto-generated method stub
+
         AccountFrm accountFrm = AppInitiator.getAccForm();
         String accnr = accountFrm.getAccountNo();
-        WithdrawDialog dep = new WithdrawDialog(accountFrm, accnr);
-        dep.setBounds(430, 15, 275, 140);
-        dep.show();
+
+        IAccount account = accountManager.getAccountById(accnr);
+        if (account.getBalance() <= 0) {
+            JOptionPane.showMessageDialog(AppInitiator.getAccForm(), "Your account does not have enough balance to withdraw.", "Insufficent Amount", JOptionPane.ERROR_MESSAGE);
+        } else {
+            WithdrawDialog dep = new WithdrawDialog(accountFrm, accnr);
+            dep.setBounds(430, 15, 275, 140);
+            dep.show();
+        }
     }
 
     public void withdraw(String accrno, String amount, String name) {
