@@ -1,8 +1,12 @@
 package org.mum.asd.framework.partyPattern;
 
+import com.asd.group7.common.app.functors.IFunctor;
 import java.util.Date;
 
 import org.mum.asd.framework.AccountManager.IAccount;
+import org.mum.asd.framework.predicates.IPredicate;
+import org.mum.asd.framework.predicates.NegativeBalancePredicate;
+import org.mum.asd.framework.predicates.Person500DepositPredicate;
 
 public class Person extends AParty implements IPerson{
 	private Date dateOfBirth;
@@ -35,16 +39,8 @@ public class Person extends AParty implements IPerson{
         return type;
     }
 
-    
-    
-	@Override
-	public double getBalance() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 	
-	
-    /*@Override
+    @Override
     public void sendEmail(IFunctor f, IPredicate p, double amount) {
         if (p != null) {
             if (p.check(amount)) {
@@ -55,7 +51,7 @@ public class Person extends AParty implements IPerson{
         } else {
             f.compute(this);
         }
-    }*/
+    }
 
   
 
@@ -66,4 +62,14 @@ public class Person extends AParty implements IPerson{
     public IPredicate getWithdrawPredicate() {
         return new NegativeBalancePredicate();
     }*/
+
+    @Override
+    public IPredicate getDepositPredicate() {
+        return new Person500DepositPredicate();
+    }
+
+    @Override
+    public IPredicate getWithdrawPredicate() {
+        return new NegativeBalancePredicate();
+    }
 }

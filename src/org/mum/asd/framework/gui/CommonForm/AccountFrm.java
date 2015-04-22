@@ -190,7 +190,6 @@ public class AccountFrm extends JFrame {
     }
 
     public void loadTableWithData() {
-        System.out.println("inside the loadTable");
 
         model.setRowCount(0);
         AccountManager ac = AppInitiator.getAccManger();

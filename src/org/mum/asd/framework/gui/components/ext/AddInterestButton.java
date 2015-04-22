@@ -28,7 +28,6 @@ public class AddInterestButton extends JButton implements IReceiverColleague {
         if (message.getAbout().equalsIgnoreCase(Message.ACCOUNT_SELECTED)) {
             this.setEnabled(message.isStatus());
         }
-        System.out.println("inside the add intereset buton message.");
     }
 
 }

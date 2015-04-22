@@ -1,9 +1,11 @@
 package org.mum.asd.framework.partyPattern;
 
+import com.asd.group7.common.app.functors.IFunctor;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.mum.asd.framework.AccountManager.IAccount;
+import org.mum.asd.framework.predicates.IPredicate;
 
 public abstract class AParty implements IParty {
 
@@ -81,7 +83,15 @@ public abstract class AParty implements IParty {
         this.accountList.add(account);
         account.setParty(this);
     }
-
-
-
+    
+    @Override
+    public double getBalance() {
+        double balance = 0;
+        for (IAccount account : accountList) {
+            balance += account.getBalance();
+        }
+        return balance;
+    }
+    
+ 
 }
