@@ -45,7 +45,7 @@ public class WithdrawController implements BaseController {
             ITransaction iTransaction = new WithDrawl();
             iTransaction.setAmount(Double.parseDouble(amount));
             iTransaction.setName(name);
-            accountManager.withDraw(account, iTransaction);
+            accountManager.withDraw(account, (ATransaction)iTransaction);
         } catch (Exception e) {
             e.printStackTrace();
         }

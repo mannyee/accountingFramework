@@ -10,11 +10,7 @@ public class CheckingAccount extends AAccount {
         super.setType("Ch");
     }
 
-    @Override
-    public void addEntry(ITransaction transaction) {
-        // TODO Auto-generated method stub
-
-    }
+    
 
     public double getCurrentBalance() {
         return super.getBalance();

@@ -10,5 +10,11 @@ package org.mum.asd.framework.transaction;
  * @author dell
  */
 public class WithDrawl extends ATransaction{
-    
+
+	private final String TXNTYPE = "Withdraw";
+	
+	
+	public String getTxnType(){
+		return TXNTYPE;
+	}
 }

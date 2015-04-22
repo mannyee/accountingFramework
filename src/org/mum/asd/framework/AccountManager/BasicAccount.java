@@ -5,10 +5,6 @@ import org.mum.asd.framework.transaction.ITransaction;
 
 public class BasicAccount extends AAccount {
 
-    @Override
-    public void addEntry(ITransaction transaction) {
-        // TODO Auto-generated method stub
-    }
 
     public double getCurrentBalance() {
         // TODO Auto-generated method stub

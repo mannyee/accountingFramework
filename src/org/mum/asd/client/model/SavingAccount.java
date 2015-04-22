@@ -2,7 +2,6 @@ package org.mum.asd.client.model;
 
 import org.mum.asd.framework.AccountManager.AAccount;
 import org.mum.asd.framework.partyPattern.IParty;
-import org.mum.asd.framework.transaction.ITransaction;
 
 public class SavingAccount extends AAccount {
 
@@ -10,11 +9,7 @@ public class SavingAccount extends AAccount {
         super.setType("S");
     }
 
-    @Override
-    public void addEntry(ITransaction transaction) {
-		// TODO Auto-generated method stub
-
-    }
+    
 
     public double getCurrentBalance() {
         return super.getBalance();

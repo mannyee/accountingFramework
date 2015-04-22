@@ -9,6 +9,10 @@ package org.mum.asd.framework.transaction;
  *
  * @author dell
  */
-public class Deposite extends ATransaction{
-    
+public class Deposite extends ATransaction {
+	private final String TXNTYPE = "Deposit";
+
+	public String getTxnType() {
+		return TXNTYPE;
+	}
 }

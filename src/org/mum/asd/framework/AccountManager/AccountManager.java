@@ -9,13 +9,17 @@ import com.asd.group7.common.app.functors.IFunctor;
 import com.asd.group7.common.app.functors.NegativeBalanceFunctor;
 import com.asd.group7.common.app.functors.NewBalanceFunctor;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+
 import org.mum.asd.framework.enums.Types;
 import org.mum.asd.framework.mediator.IColleague;
 import org.mum.asd.framework.mediator.ISenderColleague;
 import org.mum.asd.framework.mediator.Mediator;
 import org.mum.asd.framework.mediator.Message;
+import org.mum.asd.framework.transaction.ATransaction;
 import org.mum.asd.framework.transaction.ITransaction;
+import org.mum.asd.framework.transaction.WithDrawl;
 import org.mum.asd.framework.partyPattern.AParty;
 import org.mum.asd.framework.partyPattern.IParty;
 import org.mum.asd.framework.predicates.IPredicate;
@@ -55,22 +59,43 @@ public class AccountManager implements ISenderColleague {
         return null;
     }
 
-    public void withDraw(IAccount account, ITransaction transaction) {
+	public void withDraw(IAccount account, ATransaction transaction) {
         double balance = account.getBalance() - transaction.getAmount();
         account.setBalance(balance);
+
         IPredicate p = account.getParty().getWithdrawPredicate();
         IFunctor f = new NegativeBalanceFunctor();
         account.getParty().sendEmail(f, p, account.getBalance());
+
+        
+        ITransaction deposit = new WithDrawl();//FactoryProducer.getFactory(Types.TRANSACTION).getTransaction(TransactionType.DEPOSIT);
+       
+        deposit.setName(transaction.getName());
+        deposit.setAccount(account);
+         deposit.setAmount(transaction.getAmount());
+        account.addEntry(deposit);
+        
+
         this.send(new Message(Message.UPDATE_ACCOUNT_TABLE, true));
         
     }
 
-    public void deposite(IAccount account, ITransaction transaction) {
+    public void deposite(AAccount account, ATransaction transaction) {
         double balance = account.getBalance() + transaction.getAmount();
         account.setBalance(balance);
+
         IPredicate p = account.getParty().getDepositPredicate();
         IFunctor f = new NewBalanceFunctor();
         account.getParty().sendEmail(f, p, account.getBalance());
+
+        ITransaction withdraw = new Deposite();//FactoryProducer.getFactory(Types.TRANSACTION).getTransaction(TransactionType.DEPOSIT);
+        
+        withdraw.setName(transaction.getName());
+        withdraw.setAccount(account);
+        withdraw.setAmount(transaction.getAmount());
+        account.addEntry(withdraw);
+        
+
         this.send(new Message(Message.UPDATE_ACCOUNT_TABLE, true));
     }
 
@@ -104,4 +129,16 @@ public class AccountManager implements ISenderColleague {
         this.send(new Message(Message.UPDATE_ACCOUNT_TABLE, true));
     }
     
+
+    
+    public StringBuilder generateReport() {
+        StringBuilder myBuilder = new StringBuilder();
+        
+        for(IAccount account : listOfAccount){
+        	myBuilder.append("\n" + account.generateReport().toString());
+        }
+        
+        return myBuilder;
     }
+    
+}
