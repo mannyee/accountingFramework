@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.asd.group7.common.app.functors;
+package org.mum.asd.framework.functors;
 
 import org.mum.asd.framework.partyPattern.IParty;
 
 
 /**
  *
- * @author dhruba
+ * @author dell
  */
-public class NewBalanceFunctor implements IFunctor<IParty> {
+public class NegativeBalanceFunctor implements IFunctor<IParty> {
 
     @Override
     public void compute(IParty p) {
-        System.out.println("Email: Your new balance is: " + p.getBalance());
+        System.out.println("Your balance is negative: " + p.getBalance());
     }
 }

@@ -1,6 +1,6 @@
 package org.mum.asd.framework.partyPattern;
 
-import com.asd.group7.common.app.functors.IFunctor;
+import org.mum.asd.framework.functors.IFunctor;
 import java.util.ArrayList;
 import java.util.List;
 

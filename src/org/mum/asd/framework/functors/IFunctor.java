@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.asd.group7.common.app.functors;
+package org.mum.asd.framework.functors;
 
 /**
  *
- * @author james
+ * @author dell
  */
 public interface IFunctor<T> {
 

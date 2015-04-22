@@ -5,9 +5,9 @@
  */
 package org.mum.asd.framework.AccountManager;
 
-import com.asd.group7.common.app.functors.IFunctor;
-import com.asd.group7.common.app.functors.NegativeBalanceFunctor;
-import com.asd.group7.common.app.functors.NewBalanceFunctor;
+import org.mum.asd.framework.functors.IFunctor;
+import org.mum.asd.framework.functors.NegativeBalanceFunctor;
+import org.mum.asd.framework.functors.NewBalanceFunctor;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
