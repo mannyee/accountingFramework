@@ -3,13 +3,14 @@ package org.mum.asd.client.controller;
 import java.awt.event.ActionEvent;
 
 import org.mum.asd.client.enums.MyAccountType;
+import org.mum.asd.client.model.BankFactory;
 import org.mum.asd.client.view.bank.AddCompanyAccDialog;
 import org.mum.asd.framework.AccountManager.AAccount;
 import org.mum.asd.framework.AccountManager.IAccount;
 import org.mum.asd.framework.controller.BaseController;
 import org.mum.asd.framework.enums.PartyType;
 import org.mum.asd.framework.enums.Types;
-import org.mum.asd.framework.factory.AppFactory;
+import org.mum.asd.framework.factory.PartyFactory;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
 import org.mum.asd.framework.main.AppInitiator;
 import org.mum.asd.framework.partyPattern.Company;
@@ -33,11 +34,11 @@ public class AddCompanyAccController implements BaseController {
     }
 
     public void createAccount(MyAccountType accType, String name, String city, String state, String str, String zip, String accNum, String numEmp, String email) throws NumberFormatException{
-    	IAccount account = AppFactory.getFactory(MyAccountType.MYAC).getAccount(accType);
+    	IAccount account = BankFactory.getAccount(accType);
         AAccount absAccount = (AAccount)account;
         absAccount.setAcctNumber(accNum);
         
-        IParty party = AppFactory.getFactory(Types.PARTY).getParty(PartyType.COMPANY);
+        IParty party = PartyFactory.getParty(PartyType.COMPANY);
         Company company = (Company)party;
 
         company.setName(name);

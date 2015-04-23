@@ -3,19 +3,13 @@ package org.mum.asd.client.view;
 
 import java.awt.event.ActionListener;
 
-import javax.swing.*;
-
 import org.mum.asd.client.controller.AddCompanyAccController;
 import org.mum.asd.client.controller.AddPersonalAccController;
 import org.mum.asd.client.controller.DepositController;
 import org.mum.asd.client.controller.ReportController;
 import org.mum.asd.client.controller.WithdrawController;
-import org.mum.asd.client.enums.MyAccountType;
-import org.mum.asd.client.model.MyAccountFactory;
 import org.mum.asd.client.view.bank.ReportButton;
-import org.mum.asd.framework.factory.AppFactory;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
-import org.mum.asd.framework.gui.components.ext.PersonalAccountButton;
 import org.mum.asd.framework.main.AppInitiator;
 import org.mum.asd.framework.main.FinCo;
 
@@ -26,7 +20,7 @@ public class BankSystemDashboard extends AccountFrm {
 	protected ReportButton JButton_Report = new ReportButton();
 
     static {
-        AppFactory.addAbstractFactory(MyAccountType.MYAC, new MyAccountFactory());
+//        AppFactory.addAbstractFactory(MyAccountType.MYAC, new BankFactory());
         bank = new BankSystemDashboard();
     }
     
