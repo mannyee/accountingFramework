@@ -5,13 +5,13 @@ import java.awt.event.ActionEvent;
 import org.mum.asd.bank.controller.AddCompanyAccController;
 import org.mum.asd.bank.enums.MyAccountType;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
-import org.mum.asd.framework.gui.CommonForm.JDialog_AddAccount;
+import org.mum.asd.framework.gui.CommonForm.AccountDialog;
 
 import java.awt.*;
 
 import javax.swing.*;
 
-public class AddCompanyAccDialog extends JDialog_AddAccount {
+public class AddCompanyAccDialog extends AccountDialog {
 	public AddCompanyAccDialog(AccountFrm parent) {
         super(parent);
         setTitle("Add Company Account");

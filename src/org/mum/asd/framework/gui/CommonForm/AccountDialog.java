@@ -4,13 +4,13 @@ import javax.swing.ButtonGroup;
 
 import org.mum.asd.framework.common.gui.components.asd.ASDDialog;
 
-public class JDialog_AddAccount extends ASDDialog {
+public class AccountDialog extends ASDDialog {
 
     private AccountFrm parentframe;
     //protected SymMouse aSymMouse = new SymMouse();
     protected ButtonGroup buttonGroup = new ButtonGroup();
 
-    public JDialog_AddAccount(AccountFrm parent) {
+    public AccountDialog(AccountFrm parent) {
         super(parent);
         parentframe = parent;
 

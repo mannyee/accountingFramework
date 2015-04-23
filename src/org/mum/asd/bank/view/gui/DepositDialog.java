@@ -4,9 +4,9 @@ import static com.sun.glass.ui.Cursor.setVisible;
 import java.awt.event.ActionEvent;
 import org.mum.asd.bank.controller.DepositController;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
-import org.mum.asd.framework.gui.CommonForm.JDialog_Dialogview;
+import org.mum.asd.framework.gui.CommonForm.TransactionDialog;
 
-public class DepositDialog extends JDialog_Dialogview {
+public class DepositDialog extends TransactionDialog {
 
     public DepositDialog(AccountFrm parent, String aaccnr) {
         super(parent, aaccnr);

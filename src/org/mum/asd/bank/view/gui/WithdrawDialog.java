@@ -3,9 +3,9 @@ package org.mum.asd.bank.view.gui;
 import java.awt.event.ActionEvent;
 import org.mum.asd.bank.controller.WithdrawController;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
-import org.mum.asd.framework.gui.CommonForm.JDialog_Dialogview;
+import org.mum.asd.framework.gui.CommonForm.TransactionDialog;
 
-public class WithdrawDialog extends JDialog_Dialogview {
+public class WithdrawDialog extends TransactionDialog {
 
     public WithdrawDialog(AccountFrm parent, String aaccnr) {
         super(parent, aaccnr);
