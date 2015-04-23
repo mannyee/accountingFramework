@@ -1,14 +1,14 @@
-package org.mum.asd.bank.view;
+package org.mum.asd.banking.view;
 
 
 import java.awt.event.ActionListener;
 
-import org.mum.asd.bank.controller.AddCompanyAccController;
-import org.mum.asd.bank.controller.AddPersonalAccController;
-import org.mum.asd.bank.controller.DepositController;
-import org.mum.asd.bank.controller.ReportController;
-import org.mum.asd.bank.controller.WithdrawController;
-import org.mum.asd.bank.view.gui.ReportButton;
+import org.mum.asd.banking.controller.AddCompanyAccController;
+import org.mum.asd.banking.controller.AddPersonalAccController;
+import org.mum.asd.banking.controller.DepositController;
+import org.mum.asd.banking.controller.ReportController;
+import org.mum.asd.banking.controller.WithdrawController;
+import org.mum.asd.banking.view.gui.ReportButton;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
 import org.mum.asd.framework.main.AppInitiator;
 import org.mum.asd.framework.main.FinCo;

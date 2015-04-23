@@ -1,8 +1,8 @@
-package org.mum.asd.bank.controller;
+package org.mum.asd.banking.controller;
 
 import java.awt.event.ActionEvent;
 
-import org.mum.asd.bank.view.gui.DepositDialog;
+import org.mum.asd.banking.view.gui.DepositDialog;
 import org.mum.asd.framework.AccountManager.AAccount;
 import org.mum.asd.framework.AccountManager.AccountManager;
 import org.mum.asd.framework.AccountManager.IAccount;

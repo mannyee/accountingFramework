@@ -1,4 +1,4 @@
-package org.mum.asd.bank.view.gui;
+package org.mum.asd.banking.view.gui;
 
 import javax.swing.JButton;
 

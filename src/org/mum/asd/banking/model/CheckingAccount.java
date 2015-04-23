@@ -1,4 +1,4 @@
-package org.mum.asd.bank.model;
+package org.mum.asd.banking.model;
 
 import org.mum.asd.framework.AccountManager.AAccount;
 import org.mum.asd.framework.partyPattern.IParty;

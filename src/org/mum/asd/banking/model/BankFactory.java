@@ -1,6 +1,6 @@
-package org.mum.asd.bank.model;
+package org.mum.asd.banking.model;
 
-import org.mum.asd.bank.enums.MyAccountType;
+import org.mum.asd.banking.enums.MyAccountType;
 import org.mum.asd.framework.AccountManager.IAccount;
 
 public class BankFactory {
