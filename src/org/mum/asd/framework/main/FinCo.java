@@ -5,9 +5,6 @@
  */
 package org.mum.asd.framework.main;
 
-import org.mum.asd.bank.view.Bank;
-import org.mum.asd.framework.gui.CommonForm.AccountFrm;
-
 /**
  *
  * @author dell
