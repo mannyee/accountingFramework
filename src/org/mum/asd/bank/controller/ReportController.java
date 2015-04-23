@@ -2,7 +2,7 @@ package org.mum.asd.bank.controller;
 
 import java.awt.event.ActionEvent;
 
-import org.mum.asd.bank.view.bank.ReportDialog;
+import org.mum.asd.bank.view.gui.ReportDialog;
 import org.mum.asd.framework.controller.BaseController;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
 import org.mum.asd.framework.main.AppInitiator;

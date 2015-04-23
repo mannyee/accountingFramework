@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 
 import org.mum.asd.bank.enums.MyAccountType;
 import org.mum.asd.bank.model.BankFactory;
-import org.mum.asd.bank.view.bank.AddCompanyAccDialog;
+import org.mum.asd.bank.view.gui.AddCompanyAccDialog;
 import org.mum.asd.framework.AccountManager.AAccount;
 import org.mum.asd.framework.AccountManager.IAccount;
 import org.mum.asd.framework.controller.BaseController;

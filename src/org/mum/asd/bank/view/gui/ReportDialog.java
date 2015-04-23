@@ -1,4 +1,4 @@
-package org.mum.asd.bank.view.bank;
+package org.mum.asd.bank.view.gui;
 
 import java.awt.Frame;
 
