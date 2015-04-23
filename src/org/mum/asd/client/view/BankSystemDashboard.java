@@ -17,7 +17,7 @@ import org.mum.asd.framework.factory.AppFactory;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
 import org.mum.asd.framework.gui.components.ext.PersonalAccountButton;
 import org.mum.asd.framework.main.AppInitiator;
-import org.mum.asd.framework.main.Main;
+import org.mum.asd.framework.main.FinCo;
 
 /**
  * A basic JFC based application.
@@ -39,7 +39,7 @@ public class BankSystemDashboard extends AccountFrm {
     }
        public static void main(String[] args) {
         AppInitiator.setAccForm(bank);
-        Main.initializeApp();
+        FinCo.initializeApp();
     }
 
     public BankSystemDashboard() {
