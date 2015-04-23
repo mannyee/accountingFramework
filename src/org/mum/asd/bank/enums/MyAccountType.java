@@ -1,4 +1,4 @@
-package org.mum.asd.client.enums;
+package org.mum.asd.bank.enums;
 
 public enum MyAccountType {
 	SAVING, CHECKING, MYAC

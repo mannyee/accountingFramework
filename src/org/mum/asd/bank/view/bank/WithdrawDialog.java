@@ -1,7 +1,7 @@
-package org.mum.asd.client.view.bank;
+package org.mum.asd.bank.view.bank;
 
 import java.awt.event.ActionEvent;
-import org.mum.asd.client.controller.WithdrawController;
+import org.mum.asd.bank.controller.WithdrawController;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
 import org.mum.asd.framework.gui.CommonForm.JDialog_Dialogview;
 

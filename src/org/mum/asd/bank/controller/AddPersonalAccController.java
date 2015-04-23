@@ -1,11 +1,11 @@
-package org.mum.asd.client.controller;
+package org.mum.asd.bank.controller;
 
 import java.awt.event.ActionEvent;
 import java.util.Date;
 
-import org.mum.asd.client.enums.MyAccountType;
-import org.mum.asd.client.model.BankFactory;
-import org.mum.asd.client.view.bank.AddPersonalAccDialog;
+import org.mum.asd.bank.enums.MyAccountType;
+import org.mum.asd.bank.model.BankFactory;
+import org.mum.asd.bank.view.bank.AddPersonalAccDialog;
 import org.mum.asd.framework.AccountManager.AAccount;
 import org.mum.asd.framework.AccountManager.IAccount;
 import org.mum.asd.framework.controller.BaseController;

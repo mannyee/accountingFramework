@@ -1,8 +1,8 @@
-package org.mum.asd.client.controller;
+package org.mum.asd.bank.controller;
 
 import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
-import org.mum.asd.client.view.bank.WithdrawDialog;
+import org.mum.asd.bank.view.bank.WithdrawDialog;
 import org.mum.asd.framework.AccountManager.AccountManager;
 import org.mum.asd.framework.AccountManager.IAccount;
 

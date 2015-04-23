@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.mum.asd.client.controller;
+package org.mum.asd.bank.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

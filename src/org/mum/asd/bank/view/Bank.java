@@ -1,14 +1,14 @@
-package org.mum.asd.client.view;
+package org.mum.asd.bank.view;
 
 
 import java.awt.event.ActionListener;
 
-import org.mum.asd.client.controller.AddCompanyAccController;
-import org.mum.asd.client.controller.AddPersonalAccController;
-import org.mum.asd.client.controller.DepositController;
-import org.mum.asd.client.controller.ReportController;
-import org.mum.asd.client.controller.WithdrawController;
-import org.mum.asd.client.view.bank.ReportButton;
+import org.mum.asd.bank.controller.AddCompanyAccController;
+import org.mum.asd.bank.controller.AddPersonalAccController;
+import org.mum.asd.bank.controller.DepositController;
+import org.mum.asd.bank.controller.ReportController;
+import org.mum.asd.bank.controller.WithdrawController;
+import org.mum.asd.bank.view.bank.ReportButton;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
 import org.mum.asd.framework.main.AppInitiator;
 import org.mum.asd.framework.main.FinCo;
@@ -16,19 +16,19 @@ import org.mum.asd.framework.main.FinCo;
 /**
  * A basic JFC based application.
  */
-public class BankSystemDashboard extends AccountFrm {
+public class Bank extends AccountFrm {
 	protected ReportButton JButton_Report = new ReportButton();
 
     static {
 //        AppFactory.addAbstractFactory(MyAccountType.MYAC, new BankFactory());
-        bank = new BankSystemDashboard();
+        bank = new Bank();
     }
     
 
-    public static BankSystemDashboard bank;
+    public static Bank bank;
 
-    public static BankSystemDashboard getInstance() {
-            bank = new BankSystemDashboard();
+    public static Bank getInstance() {
+            bank = new Bank();
         return bank;
     }
        public static void main(String[] args) {
@@ -36,7 +36,7 @@ public class BankSystemDashboard extends AccountFrm {
         FinCo.initializeApp();
     }
 
-    public BankSystemDashboard() {
+    public Bank() {
         setTitle("Bank Application");
         
         JPanel1.add(JButton_Report);

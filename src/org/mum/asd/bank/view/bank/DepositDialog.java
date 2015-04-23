@@ -1,8 +1,8 @@
-package org.mum.asd.client.view.bank;
+package org.mum.asd.bank.view.bank;
 
 import static com.sun.glass.ui.Cursor.setVisible;
 import java.awt.event.ActionEvent;
-import org.mum.asd.client.controller.DepositController;
+import org.mum.asd.bank.controller.DepositController;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
 import org.mum.asd.framework.gui.CommonForm.JDialog_Dialogview;
 
